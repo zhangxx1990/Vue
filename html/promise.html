@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>两秒后alert提示信息success</p>
+    <script>
+        //es6 Promise对象
+        const promise = new Promise(function(resolve,reject){
+            setTimeout(() => {
+                resolve("success")
+            },2000)
+        });
+        promise.then((result) => {
+            alert(result);
+        })
+    </script>
+</body>
+</html>

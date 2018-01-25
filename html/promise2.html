@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getJson = function(url) {
+            const promise = new Promise(function(resolve,reject){
+                const handFn = function() {
+                    if(this.readyState !==4 ){
+                        return;
+                    }    
+                    if(this.status === 200 ){
+                        resolve(this.response);
+                    }else {
+                        reject(new Error(this.statusText))
+                    }
+                }
+
+                const xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET",url);
+                xmlHttp.onreadystatechange = handFn;
+                // xmlHttp.responseType = "json";
+                // xmlHttp.setRequestHeader("Accept","application/json");
+                xmlHttp.send();
+            })
+            return promise;
+        }
+        getJson("/myjson.json").then(function(json){
+            console.log(json);
+        },function(error){
+            console.error(error);
+        });
+    </script>
+</body>
+</html>
