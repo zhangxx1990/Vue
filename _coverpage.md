@@ -4,8 +4,8 @@
 
 > 张修新 <span style="font-size: 18px;"></span>
 
-[博客](http://www.zhangxiuxin.top)
+[博客](http://zhangxiuxin.top)
 
-http://www.zhangxiuxin.top 
+http://zhangxiuxin.top
 
 [Get Started](README)
